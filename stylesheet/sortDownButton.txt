@@ -1,0 +1,8 @@
+QPushButton
+{
+    border-image: url(image/sortDownButton.png) 0 0 0 0 stretch stretch;
+}
+QPushButton::pressed
+{
+    border-image: url(image/sortDownButtonPressed.png) 0 0 0 0 stretch stretch;
+}

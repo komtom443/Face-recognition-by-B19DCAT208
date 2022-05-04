@@ -1,0 +1,4 @@
+QLabel
+{
+    border-image: url(image/imageScreen_clear.png) 0 0 0 0 stretch stretch;
+}

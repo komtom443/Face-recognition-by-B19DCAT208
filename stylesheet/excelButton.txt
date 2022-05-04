@@ -1,0 +1,8 @@
+QPushButton
+{
+    border-image: url(image/excelButton.png) 0 0 0 0 stretch stretch;
+}
+QPushButton::pressed
+{
+    border-image: url(image/excelButtonPressed.png) 0 0 0 0 stretch stretch;
+}

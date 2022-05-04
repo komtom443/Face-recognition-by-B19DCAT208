@@ -1,0 +1,8 @@
+QPushButton
+{
+    border-image: url(image/preButton.png) 0 0 0 0 stretch stretch;
+}
+QPushButton::pressed
+{
+    border-image: url(image/preButtonPressed.png) 0 0 0 0 stretch stretch;
+}
