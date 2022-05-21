@@ -2,8 +2,6 @@
 import sys
 import os
 from User import User
-from tkinter import Image
-from unittest import result
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import *
@@ -26,7 +24,7 @@ from userEditForm import UserEditDialog
 class MenuDialog(QDialog):
     def __init__(self):
         super(MenuDialog, self).__init__()
-        loadUi("ui/menuUI1.ui",self)
+        loadUi("ui/menuUI.ui",self)
         self.menuStyleSheet()
         self.startFuncButton.clicked.connect(self.startFuncButtonExec)
         self.editButton.clicked.connect(self.editUserButtonExec)

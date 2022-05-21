@@ -18,11 +18,11 @@ import face_recognition
 class ImageThread(QThread):
     imageUpdate = pyqtSignal(QImage)
     path = glob.glob("/profileImage/*.jpg")
-    datFile = r"C:\Users\Admin\Documents\shape_predictor_68_face_landmarks.dat"
+    datFile = r"shape_predictor_68_face_landmarks.dat"
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor(datFile)
     start_time = time.time()
-    note = False
+    note = ""
     def run(self):
         self.cascade_classifier = cv2.CascadeClassifier('haarcascade/haarcascade_frontalface_default.xml')
         self.threadActive = True
@@ -34,9 +34,12 @@ class ImageThread(QThread):
             ret, frame = Capture.read()
             gray = cv2.cvtColor(frame, 0)
             detections = self.cascade_classifier.detectMultiScale(gray,scaleFactor=1.3,minNeighbors=5)
+            # self.blink(frame)
+            (a,b,c) = (0,0,0)
             if(len(detections) > 0):
                 (x,y,w,h) = detections[0]
                 frame = cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
+                (a,b,c) = (x,y,h)
             if self.pressCheck:
                 self.pressCheck = False
                 img_name = 'image/tmp.jpg'
@@ -113,10 +116,9 @@ class ImageThread(QThread):
             img2_encode = face_recognition.face_encodings(img2)
             if len(img2_encode) == 0:
                 continue
-            img2_encode = img2_encode[0]
-            results = face_recognition.compare_faces([img1_encode], img2_encode)    
+            img2_encode = img2_encode[0]   
             faceDistance = face_recognition.face_distance([img1_encode],img2_encode)
-            if(results[0] == True and faceDistance[0] <= 0.4): 
+            if(faceDistance[0] <= 0.4): 
                 boolCheck = True
                 self.classFoundName = img[0:len(img)-4]
                 print("Found")

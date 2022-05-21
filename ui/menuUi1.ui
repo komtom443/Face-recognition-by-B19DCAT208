@@ -121,7 +121,7 @@ border-color: rgb(0, 0, 0);</string>
      <x>540</x>
      <y>180</y>
      <width>430</width>
-     <height>330</height>
+     <height>331</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -172,7 +172,7 @@ border-color: rgb(0, 0, 0);</string>
      <x>689</x>
      <y>310</y>
      <width>270</width>
-     <height>190</height>
+     <height>191</height>
     </rect>
    </property>
    <property name="widgetResizable">
@@ -184,7 +184,7 @@ border-color: rgb(0, 0, 0);</string>
       <x>0</x>
       <y>0</y>
       <width>268</width>
-      <height>188</height>
+      <height>189</height>
      </rect>
     </property>
    </widget>

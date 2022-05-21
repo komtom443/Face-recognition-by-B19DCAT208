@@ -39,8 +39,8 @@ class HistoryDialog(QDialog):
         self.excelButton.clicked.connect(self.excelButtonExec)
         mygroupbox = QGroupBox()
         myform = QFormLayout()
-        fpath = os.listdir("history")
         self.historyStyleSheet()
+        fpath = os.listdir("history")
         for path in range(len(fpath)-1,-1,-1):
             with open(f"history/{fpath[path]}","r") as file:
                 A = file.readlines()
@@ -66,6 +66,13 @@ class HistoryDialog(QDialog):
             self.label.setStyleSheet(f.read())
         with open("stylesheet/sortDownButton.txt") as f:
             self.sortButton.setStyleSheet(f.read())
+        with open("stylesheet/comboBox.txt") as f:
+            self.comboBox.setStyleSheet(f.read())
+        self.comboBox.addItem("Tất cả")
+        self.comboBox.addItem("ID đăng nhập")
+        self.comboBox.addItem("Tên đăng nhập")
+        self.comboBox.addItem("Ngày đăng nhập")
+        self.comboBox.addItem("Giờ đăng nhập")
     
     
     @pyqtSlot()
@@ -78,11 +85,36 @@ class HistoryDialog(QDialog):
         self.exportList = []
         tmp = self.no_accent_vietnamese(tmp).lower()
         print(tmp)
-        for i in self.listHistory:
-            if i.searchStr().find(tmp) != -1:
-                myform.addRow(QLabel(i.strOutput()))
-                self.exportList.append(i)
-                Count += 1
+        if self.comboBox.currentText() == "Tất cả":
+            for i in self.listHistory:
+                if i.searchStr().find(tmp) != -1:
+                    myform.addRow(QLabel(i.strOutput()))
+                    self.exportList.append(i)
+                    Count += 1
+        if self.comboBox.currentText() == "ID đăng nhập":
+            for i in self.listHistory:
+                if i.id.find(tmp) != -1:
+                    myform.addRow(QLabel(i.strOutput()))
+                    self.exportList.append(i)
+                    Count += 1
+        if self.comboBox.currentText() == "Tên đăng nhập":
+            for i in self.listHistory:
+                if i.name.find(tmp) != -1:
+                    myform.addRow(QLabel(i.strOutput()))
+                    self.exportList.append(i)
+                    Count += 1
+        if self.comboBox.currentText() == "Ngày đăng nhập":
+            for i in self.listHistory:
+                if i.time[0].find(tmp) != -1:
+                    myform.addRow(QLabel(i.strOutput()))
+                    self.exportList.append(i)
+                    Count += 1
+        if self.comboBox.currentText() == "Giờ đăng nhập":
+            for i in self.listHistory:
+                if i.time[1].find(tmp) != -1:
+                    myform.addRow(QLabel(i.strOutput()))
+                    self.exportList.append(i)
+                    Count += 1
         mygroupbox.setLayout(myform)
         self.historyDisplay.setWidget(mygroupbox)
         self.textEdit.setText("")

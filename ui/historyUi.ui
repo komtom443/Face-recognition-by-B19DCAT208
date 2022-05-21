@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>560</width>
-    <height>560</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>120</y>
+     <y>160</y>
      <width>540</width>
      <height>430</height>
     </rect>
@@ -77,7 +77,7 @@
   <widget class="QPushButton" name="excelButton">
    <property name="geometry">
     <rect>
-     <x>495</x>
+     <x>490</x>
      <y>20</y>
      <width>50</width>
      <height>40</height>
@@ -117,8 +117,8 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>480</width>
-     <height>60</height>
+     <width>541</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -132,10 +132,16 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>80</y>
-     <width>541</width>
-     <height>31</height>
+     <y>120</y>
+     <width>540</width>
+     <height>30</height>
     </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>540</width>
+     <height>30</height>
+    </size>
    </property>
    <property name="font">
     <font>
@@ -150,6 +156,25 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>71</y>
+     <width>461</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="currentText">
+    <string/>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>historyDisplay</zorder>
   <zorder>textEdit</zorder>
@@ -157,6 +182,7 @@
   <zorder>excelButton</zorder>
   <zorder>sortButton</zorder>
   <zorder>status</zorder>
+  <zorder>comboBox</zorder>
  </widget>
  <resources/>
  <connections/>
