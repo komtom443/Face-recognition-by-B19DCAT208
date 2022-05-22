@@ -4,3 +4,4 @@ class User:
         self.name = name
         self.sex = sex
         self.dob = dob
+        self.loginHistory = []

@@ -8,6 +8,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from User import User
+from HistoryRecord import HistoryRecord
 class HistoryRecord:
     def __init__(self,A):
         self.inputStr = str

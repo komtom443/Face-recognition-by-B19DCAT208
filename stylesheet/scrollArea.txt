@@ -9,21 +9,17 @@ QLabel
     font-size: 18px;
     text-align: right;
 }
-QFormLayout,QGroupBox
-{
-    background-color: white;
-    border-style: outset;
-    border-radius: 10px;
-    border-width: 2px;
-    border-color: rgb(0, 0, 0);
-}
 QScrollArea
 {
     background-color: white;
     border-style: outset;
     border-width: 2px;
-    border-radius: 10px;
     border-color: rgb(0, 0, 0);
+}
+.historyForm > QScrollArea
+{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
 QScrollBar:vertical, QScrollBar:horizontal
 {
